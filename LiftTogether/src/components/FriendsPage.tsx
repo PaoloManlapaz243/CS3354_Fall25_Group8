@@ -147,7 +147,7 @@ export default function FriendsPage({ onNavigate, onLogout }: FriendsPageProps) 
                         </div>
                       </div>
                       <button 
-                        onClick={() => removeFriend(friends.id)}
+                        onClick={() => removeFriend(friend.id)}
                         className="px-4 py-2 bg-[#1f1f1f] border border-[#404040] text-white rounded-lg hover:bg-[#2a2a2a] transition-colors">
                         Remove
                       </button>
