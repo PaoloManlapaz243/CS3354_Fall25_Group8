@@ -55,7 +55,7 @@ const initialPosts: WorkoutPost[] = [
   {
     id: '1',
     userId: 'user1',
-    username: 'JohnDoe123',
+    username: 'MarwanM',
     exercise: 'Bench Press',
     sets: 3,
     reps: 8,
@@ -67,7 +67,7 @@ const initialPosts: WorkoutPost[] = [
   },
   {
     id: '2',
-    userId: 'user2',
+    userId: 'MaxL',
     username: 'FitnessFan22',
     exercise: 'Squat',
     sets: 5,
@@ -79,7 +79,7 @@ const initialPosts: WorkoutPost[] = [
   },
   {
     id: '3',
-    userId: 'user3',
+    userId: 'PaoloM',
     username: 'GymRat99',
     exercise: 'Deadlift',
     sets: 1,
@@ -92,7 +92,7 @@ const initialPosts: WorkoutPost[] = [
   },
   {
     id: '4',
-    userId: 'user4',
+    userId: 'OsmanA',
     username: 'LiftQueen',
     exercise: 'Overhead Press',
     sets: 4,
@@ -105,7 +105,7 @@ const initialPosts: WorkoutPost[] = [
   {
     id: '5',
     userId: 'user1',
-    username: 'JohnDoe123',
+    username: 'MarwanM',
     exercise: 'Barbell Row',
     sets: 4,
     reps: 8,
@@ -115,21 +115,9 @@ const initialPosts: WorkoutPost[] = [
     likes: 4
   },
   {
-    id: '6',
-    userId: 'user5',
-    username: 'IronWarrior',
-    exercise: 'Front Squat',
-    sets: 3,
-    reps: 10,
-    weight: 225,
-    caption: 'Front squats are brutal but worth it',
-    timestamp: new Date('2025-11-16T09:00:00'),
-    likes: 9
-  },
-  {
     id: '7',
     userId: 'user2',
-    username: 'FitnessFan22',
+    username: 'MaxL',
     exercise: 'Pull Up',
     sets: 5,
     reps: 12,
