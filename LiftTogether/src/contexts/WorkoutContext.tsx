@@ -67,8 +67,8 @@ const initialPosts: WorkoutPost[] = [
   },
   {
     id: '2',
-    userId: 'MaxL',
-    username: 'FitnessFan22',
+    userId: 'user2',
+    username: 'MaxL',
     exercise: 'Squat',
     sets: 5,
     reps: 5,
@@ -79,8 +79,8 @@ const initialPosts: WorkoutPost[] = [
   },
   {
     id: '3',
-    userId: 'PaoloM',
-    username: 'GymRat99',
+    userId: 'user3',
+    username: 'PaoloM',
     exercise: 'Deadlift',
     sets: 1,
     reps: 5,
@@ -92,8 +92,8 @@ const initialPosts: WorkoutPost[] = [
   },
   {
     id: '4',
-    userId: 'OsmanA',
-    username: 'LiftQueen',
+    userId: 'user4',
+    username: 'OsmanA',
     exercise: 'Overhead Press',
     sets: 4,
     reps: 6,
