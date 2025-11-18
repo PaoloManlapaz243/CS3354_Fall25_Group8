@@ -20,7 +20,7 @@ export default function HomePage({ onNavigate, onLogout }: HomePageProps) {
   // This ensures that if a friend is removed from the friends list, their posts no longer appear.
   const visiblePosts = user
     ? posts.filter(
-        (p) => p.userId === user.id || friends.some((f) => f.id === p.userId)
+        (p) => p.id === user.id || friends.some((f) => f.id === p.id)
       )
     : [];
 
