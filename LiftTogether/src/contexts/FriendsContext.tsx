@@ -27,16 +27,16 @@ const FriendsContext = createContext<FriendsContextType | undefined>(undefined);
 
 // Mock initial data
 const initialFriends: Friend[] = [
-  { id: '1', username: 'JohnDoe123', mutualFriends: 5 },
-  { id: '2', username: 'FitnessFan22', mutualFriends: 3 },
-  { id: '3', username: 'GymRat99', mutualFriends: 7 },
-  { id: '4', username: 'LiftQueen', mutualFriends: 2 },
+  { id: '1', username: 'MarwanH', mutualFriends: 5 },
+  { id: '2', username: 'MaxL', mutualFriends: 3 },
+  { id: '3', username: 'PaoloM', mutualFriends: 7 },
+  { id: '4', username: 'OsmanA', mutualFriends: 2 },
 ];
 
 const initialRequests: FriendRequest[] = [
-  { id: '5', username: 'NewLifter42', mutualFriends: 1, timestamp: new Date('2025-11-17T08:00:00') },
-  { id: '6', username: 'SquatMaster', mutualFriends: 4, timestamp: new Date('2025-11-16T14:30:00') },
-  { id: '7', username: 'BenchPress200', mutualFriends: 2, timestamp: new Date('2025-11-15T10:00:00') },
+  { id: '5', username: 'NicholasA', mutualFriends: 1, timestamp: new Date('2025-11-17T08:00:00') },
+  { id: '6', username: 'ManhaK', mutualFriends: 4, timestamp: new Date('2025-11-16T14:30:00') },
+  { id: '7', username: 'MichaelM', mutualFriends: 2, timestamp: new Date('2025-11-15T10:00:00') },
 ];
 
 export function FriendsProvider({ children }: { children: ReactNode }) {
