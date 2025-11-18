@@ -1,12 +1,18 @@
   # Team 8 Project
 
   Welcome to the LiftTogether project, created by;
+  
   Paolo Manlapaz
+  
   Nicholas Phan
+  
   Max LayPort
+  
   Marwan Hegazy
+  
   Osman Abdalla
-  Manha Kha
+  
+  Manha Khan
 
   ## How to Start
 
