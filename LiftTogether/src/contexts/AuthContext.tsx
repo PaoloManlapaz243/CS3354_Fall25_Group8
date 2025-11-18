@@ -58,12 +58,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return { success: false, error: emailValidation.error };
     }
 
-    // Validate password format
-    const passwordValidation = validatePassword(password);
-    if (!passwordValidation.valid) {
-      return { success: false, error: passwordValidation.error };
-    }
-
     // Check if user exists in mock database
     const foundUser = mockUsers.find(u => u.email === email);
     
