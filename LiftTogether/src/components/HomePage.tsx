@@ -16,6 +16,14 @@ export default function HomePage({ onNavigate, onLogout }: HomePageProps) {
 
   const likedPosts = user ? getLikedPosts(user.id) : new Set<string>();
 
+  // Filter posts so that only posts from the current user or current friends are shown.
+  // This ensures that if a friend is removed from the friends list, their posts no longer appear.
+  const visiblePosts = user
+    ? posts.filter(
+        (p) => p.userId === user.id || friends.some((f) => f.id === p.userId)
+      )
+    : [];
+
   const formatDate = (date: Date) => {
     const now = new Date();
     const diffInMs = now.getTime() - date.getTime();
@@ -53,7 +61,7 @@ export default function HomePage({ onNavigate, onLogout }: HomePageProps) {
           <div className="lg:col-span-2 space-y-6">
             <h2 className="text-2xl text-white mb-6">Your Feed</h2>
             
-            {posts.map((post) => (
+            {visiblePosts.map((post) => (
               <div 
                 key={post.id} 
                 className="bg-[#2a2a2a] rounded-xl p-6 shadow-lg border border-[#404040] hover:border-[#4caeff]/50 transition-all"
