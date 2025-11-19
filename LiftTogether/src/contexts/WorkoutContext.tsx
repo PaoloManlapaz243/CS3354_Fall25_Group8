@@ -103,7 +103,7 @@ const initialPosts: WorkoutPost[] = [
     likes: 6
   },
   {
-    id: '5',
+    id: '1',
     userId: 'user1',
     username: 'MarwanM',
     exercise: 'Barbell Row',
@@ -115,7 +115,7 @@ const initialPosts: WorkoutPost[] = [
     likes: 4
   },
   {
-    id: '7',
+    id: '2',
     userId: 'user2',
     username: 'MaxL',
     exercise: 'Pull Up',
