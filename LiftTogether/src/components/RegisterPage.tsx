@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { TrendingUp, ArrowLeft } from 'lucide-react';
+import { useFriends } from '../contexts/FriendsContext';
 
 interface RegisterPageProps {
   onNavigate: (page: 'landing' | 'login' | 'home') => void;
@@ -13,6 +14,7 @@ export default function RegisterPage({ onNavigate }: RegisterPageProps) {
   const [username, setUsername] = useState('');
   const [error, setError] = useState('');
   const { register } = useAuth();
+  const { loadUserFriendsData } = useFriends();
 
   const handleRegister = async () => {
     setError('');
@@ -32,6 +34,7 @@ export default function RegisterPage({ onNavigate }: RegisterPageProps) {
     if (!result.success) {
       setError(result.error || 'Registration failed');
     } else {
+      loadUserFriendsData(email);
       onNavigate('home');
     }
   };
