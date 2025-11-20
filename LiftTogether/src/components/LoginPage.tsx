@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { TrendingUp, ArrowLeft } from 'lucide-react';
+import { useFriends } from '../contexts/FriendsContext';
 
 interface LoginPageProps {
   onNavigate: (page: 'landing' | 'register' | 'home') => void;
@@ -11,6 +12,7 @@ export default function LoginPage({ onNavigate }: LoginPageProps) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { login } = useAuth();
+  const { loadUserFriendsData } = useFriends();
 
   const handleLogin = async () => {
     setError('');
@@ -19,6 +21,7 @@ export default function LoginPage({ onNavigate }: LoginPageProps) {
     if (!result.success) {
       setError(result.error || 'Login failed');
     } else {
+      loadUserFriendsData(email);
       onNavigate('home');
     }
   };
