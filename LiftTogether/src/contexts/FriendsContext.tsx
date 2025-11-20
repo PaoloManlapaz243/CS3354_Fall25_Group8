@@ -15,6 +15,7 @@ interface FriendsContextType {
   friends: Friend[];
   friendRequests: FriendRequest[];
   sentRequests: string[];
+  loadUserFriendsData: (userId: string) => void;
   acceptRequest: (requestId: string) => void;
   declineRequest: (requestId: string) => void;
   sendFriendRequest: (userId: string) => void;
@@ -23,19 +24,27 @@ interface FriendsContextType {
 
 const FriendsContext = createContext<FriendsContextType | undefined>(undefined);
 
-// Mock initial data
-const initialFriends: Friend[] = [
-  { id: '1', username: 'MarwanH'},
-  { id: '2', username: 'MaxL'},
-  { id: '3', username: 'PaoloM'},
-  { id: '4', username: 'OsmanA'},
-];
 
-const initialRequests: FriendRequest[] = [
-  { id: '5', username: 'NicholasA', timestamp: new Date('2025-11-17T08:00:00') },
-  { id: '6', username: 'ManhaK', timestamp: new Date('2025-11-16T14:30:00') },
-  { id: '7', username: 'MichaelM', timestamp: new Date('2025-11-15T10:00:00') },
-];
+var mockDatabase = {
+  "PreviousUser@gmail.com": {
+    friends: [
+      { id: '1', username: 'MarwanH'},
+      { id: '2', username: 'MaxL'},
+      { id: '3', username: 'PaoloM'},
+      { id: '4', username: 'OsmanA'},
+    ],
+    friendRequests: [
+      { id: '5', username: 'NicholasA', timestamp: new Date('2025-11-17T08:00:00') },
+      { id: '6', username: 'ManhaK', timestamp: new Date('2025-11-16T14:30:00') },
+      { id: '7', username: 'MichaelM', timestamp: new Date('2025-11-15T10:00:00') },
+    ],
+  },
+};
+
+// Mock initial data
+const initialFriends: Friend[] = [];
+
+const initialRequests: FriendRequest[] = [];
 
 export function FriendsProvider({ children }: { children: ReactNode }) {
   const [friends, setFriends] = useState<Friend[]>(initialFriends);
@@ -67,11 +76,30 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
     setFriends(friends.filter(f => f.id !== friendId));
   };
 
+  const loadUserFriendsData = (userName: string) => { 
+    console.log(userName);
+    const userData = mockDatabase[userName];
+
+    console.log(mockDatabase);
+    console.log(mockDatabase[userName]);
+
+    if (userData) {
+      setFriends(userData.friends);
+      setFriendRequests(userData.friendRequests);
+    } else {
+      // user has no entry in our mock database
+      setFriends([]);
+      setFriendRequests([]);
+      setSentRequests([]);
+    }
+  }
+
   return (
     <FriendsContext.Provider value={{
       friends,
       friendRequests,
       sentRequests,
+      loadUserFriendsData,
       acceptRequest,
       declineRequest,
       sendFriendRequest,
