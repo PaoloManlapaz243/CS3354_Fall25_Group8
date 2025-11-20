@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
+import { FriendsProvider } from './FriendsContext';
 
 interface User {
   id: string;
@@ -106,6 +107,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       email,
       username
     });
+
+
 
     return { success: true };
   };
