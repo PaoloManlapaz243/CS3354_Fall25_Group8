@@ -22,7 +22,7 @@ const mockUsers: Array<{ email: string; password: string; username: string }> = 
 ];
 
 // Email validation
-const validateEmail = (email: string): { valid: boolean; error?: string } => {
+export const validateEmail = (email: string): { valid: boolean; error?: string } => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
   if (!emailRegex.test(email)) {
@@ -33,7 +33,7 @@ const validateEmail = (email: string): { valid: boolean; error?: string } => {
 };
 
 // Password validation
-const validatePassword = (password: string): { valid: boolean; error?: string } => {
+export const validatePassword = (password: string): { valid: boolean; error?: string } => {
   if (!/[A-Z]/.test(password)) {
     return { valid: false, error: 'Please include a capital letter in your password' };
   }
