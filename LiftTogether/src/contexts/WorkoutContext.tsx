@@ -250,10 +250,10 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
     const newLikesMap = new Map(likesMap);
     
     if (!newLikesMap.has(postId)) {
-      newLikesMap.set(postId, new Set());
+      newLikesMap.set(postId, new Set<string>());
     }
     
-    const postLikes = newLikesMap.get(postId)!;
+    const postLikes = newLikesMap.get(postId) as Set<string>;
     
     if (postLikes.has(userId)) {
       postLikes.delete(userId);
